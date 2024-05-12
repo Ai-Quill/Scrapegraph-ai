@@ -62,7 +62,7 @@ class ParseNode(BaseNode):
         )
 
         # Parse the document
-        docs_transformed = Html2TextTransformer(
+        docs_transformed = Html2TextTransformer(ignore_links=False, ignore_images=False
         ).transform_documents(input_data[0])[0]
 
         chunks = text_splitter.split_text(docs_transformed.page_content)
